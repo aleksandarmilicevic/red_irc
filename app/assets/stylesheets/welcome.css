@@ -1,0 +1,65 @@
+div.event {
+   border: 1px solid black;
+   width: 300px;
+   margin: 5px;
+   padding: 5px;
+   float: left; 
+}
+
+div.name {
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    background-color: #CCCCCC;
+}
+
+.show .label {
+    display: inline-block;
+    width: 100px;
+}
+
+.show .value {
+    display: inline-block;
+    width: 300px;
+}
+
+.edit .label {
+    display: inline-block;
+    width: 100px;
+}
+
+.edit .value {
+    display: inline-block;
+    width: 300px;
+}
+
+.record .show-field .label {
+    display: inline-block;
+    width: 100px;
+    font-weight: bold;
+    overflow: hidden;
+    padding: 2px 5px 2px 5px;
+}
+
+.record .show-field .value {
+    display: inline-block;
+    overflow: hidden;
+    padding: 2px 5px 2px 5px;
+}
+
+.posts {
+    border: 1px solid;
+    padding: 5px;
+    margin: 5px;
+}
+
+.ChatRoom {
+    border: 1px solid;
+    margin: 5px;
+    padding: 5px;
+}
+
+.welcome {
+    font-weight: bold;
+    margin: 2px 5px 2px 5px;
+}

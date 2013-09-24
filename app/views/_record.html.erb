@@ -1,0 +1,7 @@
+<div class="record <%= record.class.relative_name %>" data-class="record" data-type="<%= record.class.name %>">
+    
+    Record: <%= record %>
+    
+    <%= render :partial => "field", :collection => record.meta.fields(true), :locals => {:owner => record} %>
+
+</div>

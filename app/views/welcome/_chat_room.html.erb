@@ -1,0 +1,29 @@
+<div class="ChatRoom">
+    
+   <div class="show">
+      <div class="label">Name:</div> 
+      <div class="value"> <%= chat_room.name %> </div>
+   </div>
+   <div class="show">
+      <div class="label">Members:</div>
+      <div class="value"> <%= chat_room.members.map{|u| u.name}.join(", ") %> </div>
+   </div>
+   <% unless chat_room.members.member?(client.user) %>
+      <button class="fire JoinRoom" 
+              type="button" 
+              data-trigger-event="JoinRoom"
+              data-param-room="${new ChatRoom(<%= chat_room.id %>)}">
+        Join</button>
+   <% end %>
+   <div class="posts-title">Posts:</div>
+   <div class="posts">
+       <%= render chat_room.messages %>
+   </div>
+   <% msg_fld_id = "ch-input-#{chat_room.id}" %>
+   <input id="<%= msg_fld_id %>" type="text" name="text"/> 
+   <button class="fire SendMsg" 
+           type="button"
+           data-trigger-event="SendMsg"
+           data-param-room="${new ChatRoom(<%= chat_room.id %>)}">
+     Send</button>
+</div>

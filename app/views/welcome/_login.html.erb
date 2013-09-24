@@ -1,0 +1,25 @@
+<div class="login">
+    
+    <form id="login-form">
+        <div class="edit">
+            <div class="label">Name:</div>     
+            <input class="value" type="text"   name="name" value=""/>
+        </div>
+        <div class="edit">
+            <div class="label">Email:</div>    
+            <input class="value" type="text"   name="email" value=""/>
+        </div>
+        <div class="edit">
+            <div class="label">Password:</div> 
+            <input class="value" type="password" name="password" value=""/>
+        </div>
+    </form>
+    
+    <button class="fire" type="button" 
+            data-trigger-event="SignIn" 
+            data-params-form="login-form">Sign In</button>
+            
+    <button class="fire" type="button" 
+            data-trigger-event="Register" 
+            data-params-form="login-form">Register</button>
+</div>

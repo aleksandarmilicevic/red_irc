@@ -1,0 +1,14 @@
+<div class="event <%= event.relative_name %>" data-class="event" data-type="<%= event.name %>">
+    
+    <div class="name"><%= event.relative_name %></div>
+    
+    <form id="event-<%=event.relative_name%>">
+        <%= render :partial => "edit_field", :collection => event.meta.params, :as => "field" %>
+    </form>
+    
+    <button class="fire" type="button" data-type="submit-event" 
+            data-event-type="<%=event.name%>" 
+            data-event-form="event-<%=event.relative_name%>">
+        Fire
+    </button>
+</div>
