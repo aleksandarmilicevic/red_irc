@@ -1,4 +1,4 @@
-Irc::Application.routes.draw do
+RedIrc::Application.routes.draw do
   root :to => 'view', :action => "start"
 
   match 'jsEvent' => 'js_event#index'

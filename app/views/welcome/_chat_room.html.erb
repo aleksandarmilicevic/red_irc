@@ -24,6 +24,7 @@
    <button class="fire SendMsg" 
            type="button"
            data-trigger-event="SendMsg"
+           data-param-msgText="${$('#<%= msg_fld_id %>').val()}"
            data-param-room="${new ChatRoom(<%= chat_room.id %>)}">
      Send</button>
 </div>

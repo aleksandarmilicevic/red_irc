@@ -2,5 +2,5 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
-Irc::Application.initialize!
+RedIrc::Application.initialize!
 

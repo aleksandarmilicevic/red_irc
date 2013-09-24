@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Irc::Application.load_tasks
+RedIrc::Application.load_tasks

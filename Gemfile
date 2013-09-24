@@ -5,8 +5,6 @@ gem 'rails', '3.2.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
 group :production do
   gem 'pg', '0.12.2'
 end
@@ -27,23 +25,21 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'thin' 
+
 gem 'arby', :git => 'https://github.com/aleksandarmilicevic/arby.git'
 gem 'red', :git => 'https://github.com/aleksandarmilicevic/red.git'
+
+# red stuff
+gem 'activerecord', ['3.2.9']
+gem 'activemodel', ['3.2.9']
+gem 'browser-timezone-rails'
 gem 'faye'
-# gem 'browser-timezone-rails'
+gem 'sass'
+gem 'sqlite3'
+gem 'rails', ['3.2.9']
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-#gem 'debugger'
-gem 'pry'
+# arby stuff
+gem 'method_source', "~>0.8.3", :git => 'https://github.com/aleksandarmilicevic/method_source.git'
+gem 'parser', "~>2.0.0.pre7"
 gem 'nilio'
+gem 'pry'

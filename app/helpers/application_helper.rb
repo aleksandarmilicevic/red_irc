@@ -28,7 +28,7 @@ module ApplicationHelper
   end
 
   def js_namespace
-    "jRed.irc"
+    "jRed.red_irc"
   end
 
 end
