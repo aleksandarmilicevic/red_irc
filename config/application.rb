@@ -30,7 +30,7 @@ module RedIrc
 
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_paths += %W(#{config.root}/lib)
-    config.autoload_paths << red_root.join("lib")
+    config.autoload_paths << red_root.join("lib").to_s
     config.paths["app/controllers"] << red_root.join("app", "controllers")
     config.paths["app/views"] << red_root.join("app", "views")
     config.paths["app/assets"] << red_root.join("app", "assets")

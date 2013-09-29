@@ -35,3 +35,9 @@ RedIrc::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 end
+
+# configure Red
+Red.configure do |c|
+  c.renderer.no_template_cache = true
+  c.renderer.no_file_cache = true
+end
