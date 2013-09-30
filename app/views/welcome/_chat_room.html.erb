@@ -1,11 +1,11 @@
 <div class="ChatRoom">
     
    <div class="show">
-      <div class="label">Name:</div> 
+      <div class="label label-info">Name:</div> 
       <div class="value"> <%= chat_room.name %> </div>
    </div>
    <div class="show">
-      <div class="label">Members:</div>
+      <div class="label label-info">Members:</div>
       <div class="value"> <%= chat_room.members.map{|u| u.name}.join(", ") %> </div>
    </div>
    <% unless chat_room.members.member?(client.user) %>

@@ -16,6 +16,7 @@ div.name {
 .show .label {
     display: inline-block;
     width: 100px;
+    color: auto;
 }
 
 .show .value {
@@ -26,6 +27,7 @@ div.name {
 .edit .label {
     display: inline-block;
     width: 100px;
+    color: auto;
 }
 
 .edit .value {
@@ -39,6 +41,7 @@ div.name {
     font-weight: bold;
     overflow: hidden;
     padding: 2px 5px 2px 5px;
+    color: auto;
 }
 
 .record .show-field .value {
