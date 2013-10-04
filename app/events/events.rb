@@ -15,7 +15,7 @@ Red::Dsl.event_model do
     requires {
       client.user && 
       roomName && roomName != "" &&
-      !serv.rooms.find_by_name(roomName)
+      serv.rooms.select{|r| r.name == roomName}.empty?
     }
     
     def ensures

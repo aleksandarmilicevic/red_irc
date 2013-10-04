@@ -1,3 +1,13 @@
+div#login-div {
+   width: 300px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+form#send-msg-form {
+  margin-top: 5px;
+}
+
 div.event {
    border: 1px solid black;
    width: 300px;
@@ -8,36 +18,30 @@ div.event {
 
 div.name {
     font-weight: bold;
-    width: 100%;
     text-align: center;
     background-color: #CCCCCC;
 }
 
 .show .label {
     display: inline-block;
-    width: 100px;
     color: auto;
 }
 
 .show .value {
     display: inline-block;
-    width: 300px;
 }
 
 .edit .label {
     display: inline-block;
-    width: 100px;
     color: auto;
 }
 
 .edit .value {
     display: inline-block;
-    width: 300px;
 }
 
 .record .show-field .label {
     display: inline-block;
-    width: 100px;
     font-weight: bold;
     overflow: hidden;
     padding: 2px 5px 2px 5px;
@@ -51,7 +55,7 @@ div.name {
 }
 
 .posts {
-    border: 1px solid;
+    /* border: 1px solid; */
     padding: 5px;
     margin: 5px;
 }
@@ -60,6 +64,9 @@ div.name {
     border: 1px solid;
     margin: 5px;
     padding: 5px;
+    display: inline-block;
+    width: 300px;
+    vertical-align: top;
 }
 
 .welcome {

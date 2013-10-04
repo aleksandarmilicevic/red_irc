@@ -1,30 +1,41 @@
-<div class="ChatRoom">
+<div class="ChatRoom panel panel-default">
     
    <div class="show">
       <div class="label label-info">Name:</div> 
       <div class="value"> <%= chat_room.name %> </div>
-   </div>
-   <div class="show">
       <div class="label label-info">Members:</div>
       <div class="value"> <%= chat_room.members.map{|u| u.name}.join(", ") %> </div>
    </div>
+   <br>
    <% unless chat_room.members.member?(client.user) %>
-      <button class="fire JoinRoom" 
+      <button class="btn btn-default JoinRoom" 
               type="button" 
               data-trigger-event="JoinRoom"
               data-param-room="${new ChatRoom(<%= chat_room.id %>)}">
         Join</button>
    <% end %>
-   <div class="posts-title">Posts:</div>
-   <div class="posts">
-       <%= render chat_room.messages %>
-   </div>
-   <% msg_fld_id = "ch-input-#{chat_room.id}" %>
-   <input id="<%= msg_fld_id %>" type="text" name="text"/> 
-   <button class="fire SendMsg" 
-           type="button"
-           data-trigger-event="SendMsg"
-           data-param-msgText="${$('#<%= msg_fld_id %>').val()}"
-           data-param-room="${new ChatRoom(<%= chat_room.id %>)}">
-     Send</button>
+
+   <ul class="list-group">
+     <%= render chat_room.messages %>
+   </ul>
+
+   <!-- <div class="panel panel-default"> -->
+   <!--   <div class="posts-title panel-heading">Posts:</div> -->
+   <!--   <div class="posts panel-body"> -->
+   <!--   </div> -->
+   <!-- </div> -->
+
+   <form role="form" class="form-inline" id="send-msg-form">
+     <% msg_fld_id = "ch-input-#{chat_room.id}" %>
+     <div class="form-group">
+       <input id="<%= msg_fld_id %>" type="text" name="text"
+              class="form-control" placeholder="Enter message"/> 
+     </div>
+     <button class="btn btn-default SendMsg" 
+             type="button"
+             data-trigger-event="SendMsg"
+             data-param-msgText="${$('#<%= msg_fld_id %>').val()}"
+             data-param-room="${new ChatRoom(<%= chat_room.id %>)}">
+       Send</button>
+   </form>
 </div>

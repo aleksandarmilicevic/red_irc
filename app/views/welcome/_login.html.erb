@@ -1,25 +1,36 @@
-<div class="login">
-    
-    <form id="login-form">
-        <div class="edit">
-            <div class="label">Name:</div>     
-            <input class="value" type="text"   name="name" value=""/>
+<div class="login container">
+  <div id="login-div">
+    <form id="login-form" class="form-horizontal" 
+          role="form">
+        <div class="form-group">
+            <!-- <label for="nameInput">Name</label> -->
+            <input id="nameInput" type="text" 
+                   name="name" value=""
+                   class="form-control"
+                   placeholder="Enter your name">
         </div>
-        <div class="edit">
-            <div class="label">Email:</div>    
-            <input class="value" type="text"   name="email" value=""/>
+        <div class="form-group">
+            <!-- <label for="emailInput">Email address</label> -->
+            <input id="emailInput" type="email" 
+                   name="email" value=""
+                   class="form-control"
+                   placeholder="Enter your email">
         </div>
-        <div class="edit">
-            <div class="label">Password:</div> 
-            <input class="value" type="password" name="password" value=""/>
+        <div class="form-group">
+            <!-- <label for="passInput">Password</label> -->
+            <input id="passInput" type="password" 
+                   name="password" value=""
+                   class="form-control"
+                   placeholder="Enter password">
         </div>
     </form>
     
-    <button class="fire" type="button" 
+    <button class="btn btn-default" type="button" 
             data-trigger-event="SignIn" 
             data-params-form="login-form">Sign In</button>
             
-    <button class="fire" type="button" 
+    <button class="btn btn-default" type="button" 
             data-trigger-event="Register" 
             data-params-form="login-form">Register</button>
+ </div>
 </div>
