@@ -12,7 +12,7 @@ Red::Dsl.machine_model do
   end
   
   machine Server < AuthServer do
-    owns rooms: (set ChatRoom)
+    owns rooms:       (set ChatRoom)
   end
   
 end 

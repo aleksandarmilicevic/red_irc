@@ -7,8 +7,14 @@
    </div>
  </div>
 
- <div class="container">
-   <%= render "irc" %>
-   <div style="height: 10px"></div>
-   <%= render "red/status" %>
- </div>
+   <div class="container" style="height: 0px">
+     <div id="online-users" class="" >
+       <%= render "online_users" %><br/>
+     </div>
+   </div>
+   <div class="container">
+     <div class="row">
+       <%= render "irc" %><br/>
+       <%= render "red/status" %>
+     </div>
+   </div>

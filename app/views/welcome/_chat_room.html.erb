@@ -20,7 +20,9 @@
          <% end %>
          <div class="sec-title">members</div>
        </div>
-       <%= render collection: chat_room.members, as: "user", partial: "user_status" %>
+       <% chat_room.members.each do |user| %>
+         <div class="User status"><%=user.name%></div>
+       <% end %>
      </div>
 
      <div class="col-md-8">

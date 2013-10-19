@@ -23,6 +23,8 @@ Red::Dsl.event_model do
       room.members = [client.user]
       serv.rooms << room
       serv.save!
+
+      success "Room '#{room.name}' created"
     end
   end
 
@@ -42,6 +44,8 @@ Red::Dsl.event_model do
     ensures {
       room.members << client.user
       room.save!
+
+      success "#{client.user.name} joined '#{room.name}' room"
     }
   end
 

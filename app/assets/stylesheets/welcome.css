@@ -16,9 +16,22 @@
   margin-top: 5px;
 }
 
+.list-group-item:first-child {
+  background-color: #bce8f1;
+  z-index: 2;
+  border-color: #9ac6c9;
+}
+
 .navbar-inverse .User {
     margin-top: 10px;
     color: white;
+}
+
+#online-users {
+    width: 250px;
+    position: relative; 
+    left: -275px;
+    top: 4px;
 }
 
 .User.status {
@@ -38,7 +51,7 @@
     margin: 5px;
     padding: 5px;
     display: inline-block;
-    width: 400px;
+    width: 435px;
     vertical-align: top;
 }
 

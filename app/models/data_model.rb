@@ -1,4 +1,5 @@
 require 'red/stdlib/web/auth/model'
+require 'red/stdlib/crud/model'
 
 include RedLib::Web::Auth
 
