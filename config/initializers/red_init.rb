@@ -8,6 +8,8 @@ Red.configure do |c|
   c.pusher.push_server    = "http://yellow-wasp.csail.mit.edu:9292/faye"
   c.pusher.push_client_js = "http://yellow-wasp.csail.mit.edu:9292/faye.js"
 
+  c.view.default_layout   = "application"
+
   c.alloy.inv_field_namer = lambda { |fld| 
     infl_for_inv = lambda{ |fld|
       ans = fld.parent.red_table_name
@@ -21,7 +23,7 @@ Red.configure do |c|
         if fld.type.range.klass == orig_fld.parent
           orig_fld.name
         else
-          "#{infl_for_inf.call(orig_fld)}_as_#{orig_fld.name.singularize}"
+          "#{infl_for_inv.call(orig_fld)}_as_#{orig_fld.name.singularize}"
         end
       else
         default_name

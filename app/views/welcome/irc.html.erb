@@ -1,0 +1,5 @@
+% if client.user
+    <%= render server.rooms %>
+% else
+    <%= render :partial => "login" %>
+% end

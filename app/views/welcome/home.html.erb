@@ -1,37 +1,12 @@
-% if client.user
-    <%= render client.user %>
-    <%= render server.rooms %>
-% else
-    <%= render :partial => "login" %>
-% end
+ <div class="navbar navbar-inverse">
+   <div class="container">
+     <div class="navbar-header">
+       <a class="navbar-brand" href="#">Public Internet Chat Relay Application</a>
+     </div>
+     <%= render client.user if client.user %>
+   </div>
+ </div>
 
-<hr>
-
-<ul id="my-tab" class="nav nav-tabs">
-  <li class="active"><a href="#" data-target="#record-classes">Record Classes</a></li>
-  <li>               <a href="#" data-target="#event-classes">Event Classes</a></li>
-  <li>               <a href="#" data-target="#chat-rooms">Rooms</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="record-classes">
-    <%= render "mbui/aleks/record_lst" %>
-  </div>
-  <div class="tab-pane" id="event-classes">
-    <%= render "mbui/aleks/event_lst" %>
-  </div>
-  <div class="tab-pane" id="chat-rooms">
-    <%= render :collection => ChatRoom.all, 
-               :partial    => "mbui/aleks/record",
-               :as         => "record" %>
-  </div>
-</div>
-
-<script>
-  $(function () {
-    $('#my-tab a').on("click", function(e) {
-      e.preventDefault();
-      $(this).tab("show");
-    });
-  })
-</script>
+ <div class="container">
+   <%= render "irc" %>
+ </div>

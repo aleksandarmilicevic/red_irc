@@ -1,23 +1,37 @@
-<div class="ChatRoom panel panel-default">
+<div class="ChatRoom panel panel-primary">
     
-   <div class="show">
-      <div class="label label-info">Name:</div> 
-      <div class="value"> <%= chat_room.name %> </div>
-      <div class="label label-info">Members:</div>
-      <div class="value"> <%= chat_room.members.map{|u| u.name}.join(", ") %> </div>
+   <div class="panel-heading">
+      <div class="panel-title"> 
+        <%= chat_room.name %> 
+        <div class="pull-right">(by <%= chat_room.members.first.name %>)</div>
+      </div>
    </div>
-   <br>
-   <% unless chat_room.members.member?(client.user) %>
-      <button class="btn btn-default JoinRoom" 
-              type="button" 
-              data-trigger-event="JoinRoom"
-              data-param-room="${new ChatRoom(<%= chat_room.id %>)}">
-        Join</button>
-   <% end %>
 
-   <ul class="list-group">
-     <%= render chat_room.messages %>
-   </ul>
+   <div class="row">
+     <div class="col-md-4 frame-right">
+       <div>
+         <% unless chat_room.members.member?(client.user) %>
+           <button class="btn btn-default pull-right JoinRoom" 
+                   type="button"
+                   data-trigger-event="JoinRoom"
+                   data-param-room="${new ChatRoom(<%= chat_room.id %>)}">
+             <span class="glyphicon glyphicon-plus pull-right JoinRoom"></span>
+           </button>
+         <% end %>
+         <div class="sec-title">members</div>
+       </div>
+       <%= render collection: chat_room.members, as: "user", partial: "user_status" %>
+     </div>
+
+     <div class="col-md-8">
+       <div class="sec-title">messages</div>
+
+       <ul class="list-group">
+         <%= render chat_room.messages %>
+       </ul>
+
+     </div>     
+   </div>
 
    <!-- <div class="panel panel-default"> -->
    <!--   <div class="posts-title panel-heading">Posts:</div> -->
@@ -25,7 +39,7 @@
    <!--   </div> -->
    <!-- </div> -->
 
-   <form role="form" class="form-inline" id="send-msg-form">
+   <form role="form" class="SendMsgForm form-inline" id="send-msg-form">
      <% msg_fld_id = "ch-input-#{chat_room.id}" %>
      <div class="form-group">
        <input id="<%= msg_fld_id %>" type="text" name="text"
