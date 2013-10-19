@@ -38,6 +38,7 @@ end
 
 # configure Red
 Red.configure do |c|
-  c.renderer.no_template_cache = true
-  c.renderer.no_file_cache = true
+  c.renderer.no_template_cache                  = false
+  c.renderer.no_file_cache                      = false
+  c.renderer.invalidate_caches_between_requests = true
 end
