@@ -1,11 +1,10 @@
 <div class="list-group">
-  <% 
-     # ([client] + (Client.online - [client])) #TODO!!!!!! WHY DOES THIS ONE NOT WORK
+  <%
      clients = Client.online
-     clients.unshift(clients.delete(client))
+     # clients.unshift(clients.delete(client))
   %>
   <% clients.map(&:user).compact.each do |user| %>
-  <div class="list-group-item">
+  <div class="list-group-item <%= (user == client.user) ? 'me' : '' %>">
     <h4 class="list-group-item-heading"><%= user.name %></h4>
     <p class="list-group-item-text">
       <%= autosave_fld user, :status, :default => "<statusless>" %>

@@ -5,19 +5,19 @@ Red.configure do |c|
   c.view_paths = Rails.configuration.paths["app/views"]
 
   c.autoviews = false
-  c.pusher.push_server    = "http://yellow-wasp.csail.mit.edu:9292/faye"
-  c.pusher.push_client_js = "http://yellow-wasp.csail.mit.edu:9292/faye.js"
+  c.pusher.push_server    = "http://localhost:9292/faye" # "http://yellow-wasp.csail.mit.edu:9292/faye"
+  c.pusher.push_client_js = "http://localhost:9292/faye.js" # "http://yellow-wasp.csail.mit.edu:9292/faye.js"
 
   c.view.default_layout   = "application"
 
-  c.alloy.inv_field_namer = lambda { |fld| 
+  c.alloy.inv_field_namer = lambda { |fld|
     infl_for_inv = lambda{ |fld|
       ans = fld.parent.red_table_name
       ans = ans.singularize if fld.belongs_to_parent?
       ans
     }
     default_name = "#{infl_for_inv.call(fld)}_as_#{fld.name.singularize}"
-    begin 
+    begin
       orig_fld = fld.parent.meta.extra[:for_field]
       if orig_fld
         if fld.type.range.klass == orig_fld.parent

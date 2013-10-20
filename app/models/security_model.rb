@@ -6,22 +6,29 @@ require_relative 'data_model'
 Red::Dsl.security_model do
   policy EditUserData do
     principal client: Client
-    
+    global    server: Server
+
+    @desc = "Can't edit other people's data"
     write User.*.when do |user|
       client.user == user
+    end
+
+    read User.status.when do |user|
+      client.user == user ||
+        !server.rooms.none? {|room| ([user, client.user] - room.members).empty?}
     end
   end
 
   # policy HideUserPrivateData do
   #   principal client: Client
-    
+
   #   restrict User.password_hash.unless do |user, pswd|
   #     client.user == user
   #   end
-    
-  #   restrict User.status.when do |user, status| 
+
+  #   restrict User.status.when do |user, status|
   #     client.user != user &&
-  #     ChatRoom.none? { |room| 
+  #     ChatRoom.none? { |room|
   #       room.members.include?(client.user) &&
   #       room.members.include?(user)
   #     }
@@ -30,7 +37,7 @@ Red::Dsl.security_model do
 
   # policy FilterChatRoomMembers do
   #   principal client: Client
-    
+
   #   restrict ChatRoom.members.reject do |room, member|
   #     !room.messages.sender.include?(member) &&
   #     client.user != member

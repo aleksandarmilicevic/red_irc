@@ -1,6 +1,6 @@
 .container {
     width: 900px;
-} 
+}
 
 .frame {
   border: 1px solid #dddddd;
@@ -16,7 +16,7 @@
   margin-top: 5px;
 }
 
-.list-group-item:first-child {
+.list-group-item.me {
   background-color: #bce8f1;
   z-index: 2;
   border-color: #9ac6c9;
@@ -29,7 +29,7 @@
 
 #online-users {
     width: 250px;
-    position: relative; 
+    position: relative;
     left: -275px;
     top: 4px;
 }
@@ -61,15 +61,15 @@
 }
 
 .SendMsgForm .form-group {
-   width: 82%; 
+   width: 82%;
 }
 
-button.JoinRoom {
+button.Event {
     margin: 0px;
     padding: 3px;
 }
 
-button.JoinRoom span.JoinRoom {
+button.Event span.Event {
     padding: 0px;
     margin: 2px;
     margin-top: -2px;
@@ -91,7 +91,7 @@ div.event {
    width: 300px;
    margin: 5px;
    padding: 5px;
-   float: left; 
+   float: left;
 }
 
 div.name {
