@@ -34,7 +34,7 @@ gem 'red', :git => 'https://github.com/aleksandarmilicevic/red.git'
 gem 'activerecord', ['3.2.9']
 gem 'activemodel', ['3.2.9']
 gem 'browser-timezone-rails'
-gem 'faye'
+gem 'faye', ['0.8.9']
 gem 'sass'
 gem 'sqlite3'
 gem 'rails', ['3.2.9']
