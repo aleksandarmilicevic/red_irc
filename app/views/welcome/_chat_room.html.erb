@@ -42,13 +42,7 @@
      </div>
    </div>
 
-   <!-- <div class="panel panel-default"> -->
-   <!--   <div class="posts-title panel-heading">Posts:</div> -->
-   <!--   <div class="posts panel-body"> -->
-   <!--   </div> -->
-   <!-- </div> -->
-
-   <form role="form" class="SendMsgForm form-inline" id="send-msg-form">
+   <form role="form" class="SendMsgForm form-inline" id="send-msg-form" onkeypress="return event.keyCode != 13;">
      <% msg_fld_id = "ch-input-#{chat_room.id}" %>
      <div class="form-group">
        <input id="<%= msg_fld_id %>" type="text" name="text"
