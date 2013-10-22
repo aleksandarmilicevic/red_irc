@@ -24,5 +24,10 @@
 <%= yield %>
 <%= red_assets %>
 
+<script type="text/javascript">
+<% require 'red/view/javascript_generator' %>
+<%= Red::View::JavascriptGenerator.new.translate_model_to_javascript.html_safe %>
+</script>
+
 </body>
 </html>

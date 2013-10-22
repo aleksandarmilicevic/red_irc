@@ -38,37 +38,37 @@ Red::Dsl.event_model do
     params room: ChatRoom
 
     requires {
-      client.user
+      !client.user.nil?
     }
 
     ensures {
       room.members << client.user
       room.save!
-
-      success "#{client.user.name} joined '#{room.name}' room"
     }
+
+    success_note { "#{client.user.name} joined '#{room.name}' room" }
   end
 
-  #------------------------------------------------------
-  # Event +JoinRoom+
-  #------------------------------------------------------
-  event LeaveRoom do
-    from client: Client
-    to   serv: Server
+  # #------------------------------------------------------
+  # # Event +LeaveRoom+
+  # #------------------------------------------------------
+  # event LeaveRoom do
+  #   from client: Client
+  #   to   serv: Server
 
-    params room: ChatRoom
+  #   params room: ChatRoom
 
-    requires {
-      room.members.include? client.user
-    }
+  #   requires {
+  #     room.members.include? client.user
+  #   }
 
-    ensures {
-      room.members.delete client.user
-      room.save!
+  #   ensures {
+  #     room.members.delete client.user
+  #     room.save!
+  #   }
 
-      success "#{client.user.name} left '#{room.name}' room"
-    }
-  end
+  #   success_note { "#{client.user.name} left '#{room.name}' room" }
+  # end
 
   #------------------------------------------------------
   # Event +SendMsg+

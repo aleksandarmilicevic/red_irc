@@ -8,7 +8,7 @@ include RedLib::Web::Auth
 #===========================================================
 Red::Dsl.data_model do
   record User < AuthUser do
-    refs status: String
+    # refs status: String
   end
   
   record Msg do

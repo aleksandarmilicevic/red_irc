@@ -1,17 +1,8 @@
 <div class="list-group">
-  <%
-     # clients = Client.online
-     # clients.unshift(clients.delete(client))
-     # clients.map(&:user).compact.each do |user|
-  %>
-  <%# Client.online.map(&:user).compact.each do |user| %>
-  <%# Client.online.user.each do |user| %>
   <% server.online_clients.user.each do |user| %>
   <div class="list-group-item <%= (user == client.user) ? 'me' : '' %>">
     <h4 class="list-group-item-heading"><%= user.name %></h4>
-    <p class="list-group-item-text">
-      <%= autosave_fld user, :status, :default => "<statusless>" %>
-    </p>
+    <p class="list-group-item-text"><%#= autosave_fld user, :status, :default => "<statusless>" %></p>
   </div>
   <% end %>
 </div>
