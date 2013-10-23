@@ -1,4 +1,5 @@
 require_relative 'data_model'
+require_relative 'machine_model'
 
 #===========================================================
 # Security model
@@ -16,6 +17,10 @@ Red::Dsl.security_model do
     # read User.status.when do |user|
     #   client.user == user ||
     #     server.rooms.some? {|room| ([user, client.user] - room.members).empty?}
+    # end
+
+    # restrict Client.user.when do |c|
+    #   c != client && c.user.status == "busy"
     # end
 
     # restrict ChatRoom.messages.reject do |room, msg|
