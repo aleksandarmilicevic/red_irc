@@ -1,19 +1,24 @@
  <div class="navbar navbar-inverse">
-   <div class="container">
-     <div class="navbar-header">
-       <a class="navbar-brand" href="#">Internet Chat Relay Application</a>
+   <div class="container" style="height: 0px">
+     <div id="app-title" class="navbar-header attach-left">
+       <a class="navbar-brand" href="#">
+         <%= image_tag "/assets/sunny-48.png", width: "48px" %> 
+         Sunny IRC
+       </a>
      </div>
+   </div>
+   <div class="container">
      <%= render client.user unless client.user.nil? %>
    </div>
  </div>
 
    <div class="container" style="height: 0px">
-     <div id="online-users" class="" >
+     <div id="online-users" class="attach-left" >
        <%= render "online_users" %><br/>
      </div>
    </div>
    <div class="container">
-     <div class="row">
+     <div id="chatroom-container" class="row">
        <%= render "irc" %><br/>
        <%= render "red/status" %>
      </div>
