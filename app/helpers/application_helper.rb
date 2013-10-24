@@ -27,6 +27,15 @@ module ApplicationHelper
     $red_server ||= Server.create!
   end
 
+  def img_tag_for(user)
+    asset_name = "#{user.name}.jpg" 
+    if Rails.application.assets.find_asset asset_name
+      %Q(<div class="avatar"><img src="/assets/#{asset_name}"/></div>).html_safe
+    else
+      ""
+    end
+  end
+
   def js_namespace
     "jRed.red_irc"
   end

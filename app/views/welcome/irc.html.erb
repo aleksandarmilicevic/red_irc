@@ -1,5 +1,5 @@
 % if client.user.nil?
     <%= render :partial => "login" %>
 % else
-    <%= render server.rooms %>
+    <%= render(server.rooms) || '<div class="empty-col">no rooms found</div>'.html_safe %>
 % end
