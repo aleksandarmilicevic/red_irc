@@ -31,7 +31,7 @@ module RedIrc
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    red_root = Pathname.new(File.expand_path('../../../red', __FILE__))
+    red_root = Pathname.new(File.expand_path('../../vendor/red', __FILE__))
 
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_paths += %W(#{config.root}/lib)
