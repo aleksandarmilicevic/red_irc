@@ -1,5 +1,5 @@
 .container {
-    width: 900px;
+    width: 650px;
 }
 
 .frame {
@@ -27,15 +27,78 @@
     color: white;
 }
 
-#online-users {
-    width: 250px;
+#app-title a {
+    padding: 5px;
+    color: #f9f381;
+}
+
+#app-title a:hover {
+    color: yellow;
+}
+
+.attach-left {
+    width: 180px;
     position: relative;
-    left: -275px;
+    left: -195px;
     top: 4px;
+}
+
+#chatroom-container {
+}
+
+.empty-col {
+    width: 100%;
+    text-align: center;
+}
+
+.user-name-status {
+    display: inline-block;
+    vertical-align: middle;
+    width: 90px;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    margin: 0px; 
+    padding: 0px;
+    margin-right: 5pt;
+    margin-left: -5pt;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.avatar img {
+    height: 48px;
+    margin-left: auto;
+    margin-right: auto; 
+    display: block;
+}
+
+.online-users .list-group-item {
+    margin: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.online-users h4 {
+    margin: 0px;
 }
 
 .User.status {
   padding-left: 15px;
+}
+
+.ChatRoom {
+    border: 1px solid;
+    margin: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    display: block;
+    width: 550px;
+    vertical-align: top;
 }
 
 .ChatRoom .panel-heading {
@@ -46,22 +109,13 @@
     padding-left: 5px;
 }
 
-.ChatRoom {
-    border: 1px solid;
-    margin: 5px;
-    padding: 5px;
-    display: inline-block;
-    width: 435px;
-    vertical-align: top;
-}
-
 .Msg {
   padding-top: 3px !important;
   padding-bottom: 3px !important;
 }
 
 .SendMsgForm .form-group {
-   width: 82%;
+   width: 88%;
 }
 
 button.Event {
