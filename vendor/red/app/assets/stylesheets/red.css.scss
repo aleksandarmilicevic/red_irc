@@ -1,0 +1,35 @@
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+reds, rede {
+  display: none;
+}
+
+.red-autotrigger {
+  cursor: pointer;
+}
+
+.red-editing {
+  /*@include box-shadow(inset 0 0 10px);*/
+  background-color: white;
+
+  @include transition(border linear .2s, box-shadow linear .2s);
+  outline: 0;
+  outline: thin dotted \9; /* IE6-9 */
+  @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.8));
+  cursor: text !important;
+}
+
+.red-updating {
+  opacity: 0.5;
+}
+
+.red-update-ok {
+  background-color: $successBackground !important;
+  border: 1px solid $successBorder;
+}
+
+.red-update-fail {
+  background-color: $errorBackground !important;
+  border: 1px solid $errorBorder;
+}

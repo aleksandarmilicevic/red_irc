@@ -28,7 +28,7 @@ module ApplicationHelper
   end
 
   def img_tag_for(user)
-    asset_name = "#{user.name}.jpg" 
+    asset_name = "#{user.name.downcase}.jpg" 
     if Rails.application.assets.find_asset asset_name
       %Q(<div class="avatar"><img src="/assets/#{asset_name}"/></div>).html_safe
     else

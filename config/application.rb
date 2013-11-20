@@ -1,8 +1,13 @@
 require File.expand_path('../boot', __FILE__)
 
 #TODO: remove
-$LOAD_PATH.unshift File.expand_path('../../../red/lib', __FILE__)
-$LOAD_PATH.unshift File.expand_path('../../../arby/lib', __FILE__)
+
+require 'pry'
+
+$LOAD_PATH.unshift File.expand_path('../../vendor/red/lib', __FILE__)
+$LOAD_PATH.unshift File.expand_path('../../vendor/arby/lib', __FILE__)
+$LOAD_PATH.unshift File.expand_path('../../vendor/sdg_utils/lib', __FILE__)
+$LOAD_PATH.unshift File.expand_path('../../vendor/method_source/lib', __FILE__)
 
 require 'rails/all'
 require 'red/red'
