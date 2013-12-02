@@ -1,9 +1,10 @@
 RedIrc::Application.routes.draw do
   root :to => 'view', :action => "start"
 
-  match 'jsEvent' => 'js_event#index'
-  match 'event' => 'event#index'
-  match 'crud' => 'view#start', :view => 'crud', :template => 'index' 
+  match 'jsEvent'     => 'js_event#index'
+  match 'event'       => 'event#index'
+  match 'crud'        => 'view#start', :view => 'crud', :template => 'index' 
+  match 'gui_builder' => 'redGuiBuilder#build'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
