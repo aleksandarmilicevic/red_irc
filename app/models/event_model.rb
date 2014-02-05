@@ -77,10 +77,10 @@ Red::Dsl.event_model do
     from client: Client
     to   serv: Server
 
-    params {{
+    params [
       room: ChatRoom,
       msgText: String
-    }}
+    ]
 
     @desc = "Must join the room before sending messages"
     requires { room.members.member?(client.user) }
