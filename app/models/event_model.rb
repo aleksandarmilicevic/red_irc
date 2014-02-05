@@ -19,10 +19,12 @@ Red::Dsl.event_model do
     }
 
     def ensures
-      room = ChatRoom.create! :name => roomName
+      room = ChatRoom.create
+      room.name = roomName
       room.members = [client.user]
+      room.save!
       serv.rooms << room
-      serv.save!
+      serv.save!      
 
       success "Room '#{room.name}' created"
     end
@@ -77,16 +79,17 @@ Red::Dsl.event_model do
     from client: Client
     to   serv: Server
 
-    params {{
+    params [
       room: ChatRoom,
       msgText: String
-    }}
+    ]
 
     @desc = "Must join the room before sending messages"
     requires { room.members.member?(client.user) }
 
     ensures {
-      msg = Msg.create! :text => msgText
+      msg = Msg.create
+      msg.text = msgText
       msg.sender = client.user
       msg.save!
       room.messages << msg
