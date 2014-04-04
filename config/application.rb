@@ -6,6 +6,7 @@ require File.expand_path('../boot', __FILE__)
 # $LOAD_PATH.unshift File.expand_path('../../../arby/lib', __FILE__)
 $LOAD_PATH.unshift File.expand_path('../../../red/lib', __FILE__)
 $LOAD_PATH.unshift File.expand_path('../../../red/vendor/arby/lib', __FILE__)
+$LOAD_PATH.unshift File.expand_path('../../../red/vendor2/arby/lib', __FILE__)
 
 require 'rails/all'
 require 'red/red'
