@@ -1,6 +1,12 @@
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
 
+$successBackground: #dff0d8;
+$successBorder: #51a351;
+$errorBackground: #f2dede;
+$errorBorder: #bd362f;
+
+
 reds, rede {
   display: none;
 }
